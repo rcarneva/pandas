@@ -867,7 +867,7 @@ class LatexFormatter(TableFormatter):
                     buf.write('\\endlastfoot\n')
             if self.fmt.kwds.get('escape', True):
                 # escape backslashes first
-                crow = [(x.replace('\\', '\\textbackslash').replace('_', '\\_')
+                crow = [(str(x).replace('\\', '\\textbackslash').replace('_', '\\_')
                          .replace('%', '\\%').replace('$', '\\$')
                          .replace('#', '\\#').replace('{', '\\{')
                          .replace('}', '\\}').replace('~', '\\textasciitilde')
